@@ -1,0 +1,16 @@
+FROM php:7.4.30-apache
+
+
+RUN apt-get update
+
+
+COPY index.php /var/www/html/
+
+WORKDIR /var/www/html/
+
+# VOLUME ["/app"]
+
+EXPOSE 80
+
+# exec command
+# docker container run -d -p 80:80 --rm -v $(pwd):/var/www/html php-apache
