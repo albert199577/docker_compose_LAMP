@@ -6,7 +6,7 @@ services:
     # build: 
     #   context: .
     #   dockerfile: dockerfile
-    image: php:7.4.30-apache
+    image: php_apache
     networks:
       - demo-network
     ports:
