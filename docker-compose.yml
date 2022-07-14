@@ -3,9 +3,9 @@ version: "3.8"
 services:
   php:
     # container_name: flask
-    # build: 
-    #   context: .
-    #   dockerfile: dockerfile
+    build: 
+      context: ./php
+      dockerfile: dockerfile
     image: php_apache
     networks:
       - demo-network
@@ -24,7 +24,7 @@ services:
     volumes:
       - ./mysql/data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   phpmyadmin:
     image: phpmyadmin:5.2.0
     networks:
